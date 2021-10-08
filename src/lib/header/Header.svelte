@@ -1,14 +1,7 @@
 <script>
-  import { page } from "$app/stores";
+  import Links from "./Links.svelte";
+
   import logo from "./svelte-logo.svg";
-  let { path } = $page;
-  const links = [
-    { url: "", link: "/", label: "individuel" },
-    { url: "pancom", link: "/pancom", label: "la communauté" },
-    { url: "advices", link: "/advices", label: "conseils" },
-  ];
-  const thisurl = links.filter(({ link }) => path === link);
-  console.log(thisurl, path);
 </script>
 
 <template lang="pug">
@@ -21,8 +14,7 @@
       svg(viewBox='0 0 2 3' aria-hidden='true')
         path(d='M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z')
       ul
-        +each('links as {url, label, link}')
-          | <li class:active="{path === link || path === url}" ><a sveltekit:prefetch href="{url||link}" >{label}</a></li>
+        Links
         
       svg(viewBox='0 0 2 3' aria-hidden='true')
         path(d='M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z')
@@ -107,20 +99,5 @@
     list-style: none;
     background: $background;
     background-size: contain;
-  }
-
-  li {
-    position: relative;
-    height: 100%;
-  }
-  li.active::before {
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: calc(50% - $size);
-    border: $size solid transparent;
-    border-top: $size solid $accent-color;
   }
 </style>

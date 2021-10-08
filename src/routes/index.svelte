@@ -4,7 +4,7 @@
 
 <script>
 	import Article from '$lib/contents/Article.svelte'
-  import Counter from "$lib/Counter.svelte";
+
 </script>
 
 <template lang="pug">
