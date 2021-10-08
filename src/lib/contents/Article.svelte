@@ -8,3 +8,11 @@
   <!-- {@html content} -->
   <slot />
 </article>
+
+<style lang="scss">
+  @import "../../main.scss";
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 300;
+  }
+</style>

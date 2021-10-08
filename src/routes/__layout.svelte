@@ -31,16 +31,16 @@
   @import "../main.scss";
   .layout {
     background: $diamond;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    // justify-content: space-around;
+    justify-content: space-around;
   }
   main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem 1rem;
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
@@ -48,10 +48,15 @@
   }
 
   footer {
+    border-top: 1px solid skyblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: $diamond;
+    opacity: 0.75;
+    // color: $pure-white;
+
     // padding: 40px;
   }
 
